@@ -9,8 +9,8 @@ set -e
 
 ### Setup
 DUMP=
-MY_DIR="${BASH_SOURCE%/*}"
-SRC_ROOT="${MY_DIR}/../../.."
+MY_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+SRC_ROOT="${MY_DIR}/../.."
 TMP_DIR=$(mktemp -d)
 EXTRACT_KERNEL=true
 declare -a MODULE_FOLDERS=("vendor_ramdisk" "vendor_dlkm" "system_dlkm")
